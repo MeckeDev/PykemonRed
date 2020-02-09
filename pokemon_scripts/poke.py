@@ -13,14 +13,12 @@ def cls():
 
 class Pokemon:
 
-    def __init__(self, num):
+    def __init__(self, num, level):
 
         with open('pokemon.json', 'r', encoding='utf-8') as p:
             all_pokemon = json.load(p)
 
         poke = all_pokemon[f"{num}"][0]
-
-        level = 10
 
         self.nummer             = poke["Nummer"]
         self.name               = poke["Name"]
@@ -82,6 +80,8 @@ class Pokemon:
 
 cls()
 
+dummy = Pokemon(3, 40)
+
 with open('pokemon.json', 'r', encoding='utf-8') as pokemons:
     pokes = json.load(pokemons)
 
@@ -96,8 +96,10 @@ while True:
         break
 
     elif int(dex[0]) <= len(pokes):
-        test = Pokemon(int(dex[0]))
+        test = Pokemon(int(dex[0]), 10)
         test.get_stats()
+        print("-"*30)
+        fight_xp(test, dummy)
 
     else:
         print("Pokemon noch nicht im Pokedex!")
