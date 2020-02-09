@@ -2,6 +2,7 @@ import json
 import numpy
 import random
 
+
 def fight_xp(self, target):
 
     trainer = True
@@ -30,6 +31,7 @@ def fight_xp(self, target):
 
     print(xp)
 
+
 def spawn_xp(level, xp_typ):
 
     # XP-Typ 1
@@ -47,6 +49,7 @@ def spawn_xp(level, xp_typ):
     # XP-Typ 4
     elif xp_typ == 4:
         return (level**3) * 0.8
+
 
 def xp_typen(entwicklungen):
 
@@ -72,9 +75,10 @@ def xp_typen(entwicklungen):
             if elem in xp4:
                 return 4
 
+
 def geschlecht(self):
 
-    genders     =  self.geschlechter
+    genders = self.geschlechter
 
     rand_val = random.random()
     total = 0

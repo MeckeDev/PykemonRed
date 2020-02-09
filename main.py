@@ -3,21 +3,21 @@ import pygame
 pygame.init()
 
 
-screenwidth = 600
-screenheight = 600
+screenwidth = 144*3
+screenheight = 160*3
 
 right = False
 left = False
 walkCount = 0
 
 # Character Position x and y
-x, y = 50, 50
+x, y = 20, 20
 
 # Character Size width and height
 width, height = 32, 32
 
 # Character Speed velocity
-vel = 8
+vel = 5
 
 win = pygame.display.set_mode((screenheight, screenwidth))
 
@@ -81,7 +81,7 @@ def redrawGameWindow():
 # The Game
 run = True
 while run:
-    clock.tick(12)
+    clock.tick(24)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

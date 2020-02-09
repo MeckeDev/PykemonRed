@@ -2,11 +2,14 @@ import os
 import json
 from berechnungen import *
 
+
 def cls():
-   if os.name=='nt':
+
+    if os.name=='nt':
         os.system('cls')
-   else:
+    else:
         os.system('clear')
+
 
 class Pokemon:
 
@@ -47,7 +50,6 @@ class Pokemon:
         self.fangrate           = poke["Fangrate"]
         self.ei_zyklen          = poke["Ei-Zyklen"]
 
-
     def get_stats(self):
 
         print(f"Name\t\t: {self.name}")
@@ -74,6 +76,7 @@ class Pokemon:
         for w in self.basiswerte:
             print(f"{tuple(self.basiswerte.items())[i][0]}".ljust(25, ' ') + ":" + f"{tuple(self.basiswerte.items())[i][1]}".ljust(10, ' '))
             i += 1
+
 
 cls()
 
