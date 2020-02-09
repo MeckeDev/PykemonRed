@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3da41d84-b585-4b66-9c42-ad010e1fc95c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XTxrpedIzRGilm8vjy7xfkG8MF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="poke" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pokemon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="E:\_Mecke\Anaconda\pythonw.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/poke.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.poke" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3da41d84-b585-4b66-9c42-ad010e1fc95c" name="Default Changelist" comment="" />
+      <created>1581084086851</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581084086851</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="164" key="#JSON" timestamp="1581213379253">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="552" y="164" key="#JSON/0.0.1920.1080/1920.-21.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1581213379253" />
+    <state x="414" y="196" width="1092" height="734" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581085746090">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="414" y="196" width="1092" height="734" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080/1920.-21.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1581085746090" />
+    <state x="707" y="330" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581218099249">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="707" y="330" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080/1920.-21.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1581218099249" />
+    <state x="686" y="149" key="#poke" timestamp="1581086131738">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="686" y="149" key="#poke/0.0.1920.1080/1920.-21.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1581086131738" />
+    <state x="-1180" y="316" key="FileChooserDialogImpl" timestamp="1581265734877">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1180" y="316" key="FileChooserDialogImpl/0.0.1920.1080/1920.-21.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1581265734877" />
+    <state x="740" y="316" key="FileChooserDialogImpl/0.0.1920.1080/1920.-21.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1581085542908" />
+  </component>
+</project>

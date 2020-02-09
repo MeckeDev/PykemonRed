@@ -1,0 +1,582 @@
+{
+
+    "1" :         [{
+    
+                    "Nummer"        :   1,
+                    "Name"          :   "Bisasam",
+                    "Typ"           :   ["Pflanze", "Gift"],
+
+                    "Schwächen"     :   [
+                                          [0, [""]],
+                                          [0.25, ["Pflanze"]],
+                                          [0.5, ["Wasser", "Elektro", "Kampf", "Fee"]],
+                                          [1, ["Normal", "Gift", "Boden", "Gestein", "Geist", "Drache", "Unlicht", "Stahl"]],
+                                          [2, ["Feuer", "Flug", "Eis", "Psycho"]],
+                                          [4, ["Käfer"]]
+                                        ],
+
+                    "Beschreibung"  :   "Dieses POKéMON trägt von Geburt an einen Samen auf dem Rücken, der mit ihm keimt und wächst.",
+                    "Entwicklungen" :   {"Bisasam": 0, "Bisaknosp": 16, "Bisaflor": 32},
+                    "Needs" 		:   {},
+                    "Fähigkeiten"   :   ["Notdünger", "Chlorophyll"],
+
+                    "Geschlechter"  :   {
+                                          "männlich"                    : 87.5,
+                                          "weiblich"                    : 12.5
+                                        },
+
+                    "Basiswerte"    :   {
+                                          "KP"                          : 45,
+                                          "Angriff"                     : 49,
+                                          "Verteidigung"                : 49,
+                                          "Spezial-Angriff"             : 65,
+                                          "Spezial-Verteidigung"        : 65,
+                                          "Initiative"                  : 45
+                                          },
+
+                    "Basis-XP"      :   64,
+                    "Fundorte"      :   ["Starter"],
+
+                    "Attacken"      :   {"Tackle": 1, "Heuler": 1, "Rankenhieb": 3, "Wachstum": 6, "Egelsamen": 9, "Rasierblatt": 12, "Giftpuder": 15, "Schlafpuder": 15, "Samenbombe": 18, "Bodycheck": 21, "Lockduft": 24, "Synthese": 27, "Sorgensamen": 30, "Risikotakle": 33, "Solarstrahl": 36},
+
+                    "TMs"           :   [10,11,17,19,21,24,25,28,29,31,34,39,41,46,50,74,76,88,94],
+
+                    "TPs"           :   [0,1,17,20,22,26,27,59,65,71,72,77,85],
+
+                    "Fangrate"      :   [45,11.9],
+                    "Ei-Zyklen"     :   20,
+                    "Ei-Gruppe"     :   ["Monster", "Pflanze"]
+                }],
+
+    "2" :       [{
+    
+                    "Nummer"        :   2,
+                    "Name"          :   "Bisaknosp",
+                    "Typ"           :   ["Pflanze", "Gift"],
+
+                    "Schwächen"     :   [
+                                          [0, [""]],
+                                          [0.25, ["Pflanze"]],
+                                          [0.5, ["Wasser", "Elektro", "Kampf", "Fee"]],
+                                          [1, ["Normal", "Gift", "Boden", "Gestein", "Geist", "Drache", "Unlicht", "Stahl"]],
+                                          [2, ["Feuer", "Flug", "Eis", "Psycho"]],
+                                          [4, ["Käfer"]]
+                                        ],
+
+                    "Beschreibung"  :   "Sobald die Knospe auf seinem Rücken aufgeht, kann BISAKNOSP nicht mehr auf zwei Beinen stehen.",
+                    "Entwicklungen" :   {"Bisasam": 0, "Bisaknosp": 16, "Bisaflor": 32},
+                    "Needs" 		:   {},
+                    "Fähigkeiten"   :   ["Notdünger", "Chlorophyll"],
+
+                    "Geschlechter"  :   {
+                                          "männlich"                  : 87.5,
+                                          "weiblich"                  : 12.5
+                                        },
+
+                    "Basiswerte"    :   {
+                                          "KP"                        : 60,
+                                          "Angriff"                   : 62,
+                                          "Verteidigung"              : 63,
+                                          "Spezial-Angriff"           : 80,
+                                          "Spezial-Verteidigung"      : 80,
+                                          "Initiative"                : 60
+                                        },
+
+                    "Basis-XP"      :   142,
+                    "Fundorte"      :   [""],
+
+                    "Attacken"      :   {"Tackle": 1, "Heuler": 1, "Rankenhieb": 1, "Wachstum": 1, "Egelsamen": 9, "Rasierblatt": 12, "Giftpuder": 15, "Schlafpuder": 15, "Samenbombe": 20, "Bodycheck": 25, "Lockduft": 30, "Synthese": 35, "Sorgensamen": 40, "Risikotakle": 45, "Solarstrahl": 50},
+
+                    "TMs"           :   [10,11,17,19,21,24,25,28,29,31,34,39,41,46,50,74,76,88,94],
+
+                    "TPs"           :   [0,1,17,20,22,26,27,59,65,71,72,77,85],
+
+                    "Fangrate"      :   [45,11.9],
+                    "Ei-Zyklen"     :   20,
+                    "Ei-Gruppe"     :   ["Monster", "Pflanze"]
+                }],
+                
+    "3" :       [{
+    
+                    "Nummer"        :   3,
+                    "Name"          :   "Bisaflor",
+                    "Typ"           :   ["Pflanze", "Gift"],
+
+                    "Schwächen"     :   [
+                                          [0, [""]],
+                                          [0.25, ["Pflanze"]],
+                                          [0.5, ["Wasser", "Elektro", "Kampf", "Fee"]],
+                                          [1, ["Normal", "Gift", "Boden", "Gestein", "Geist", "Drache", "Unlicht", "Stahl"]],
+                                          [2, ["Feuer", "Flug", "Eis", "Psycho"]], [4, ["Käfer"]]
+                                        ],
+
+                    "Beschreibung"  :   "Dieses POKéMON folgt der Sonne. Die Pflanze auf seinem Rücken absorbiert Solarenergie.",
+                    "Entwicklungen" :   {"Bisasam": 0, "Bisaknosp": 16, "Bisaflor": 32},
+                    "Needs" 		:   {},
+                    "Fähigkeiten"   :   ["Notdünger", "Chlorophyll"],
+
+                    "Geschlechter"  :   {
+                                          "männlich"                  : 87.5,
+                                          "weiblich"                  : 12.5
+                                        },
+
+                    "Basiswerte"    :   {
+                                          "KP"                        : 80,
+                                          "Angriff"                   : 82,
+                                          "Verteidigung"              : 83,
+                                          "Spezial-Angriff"           : 100,
+                                          "Spezial-Verteidigung"      : 100,
+                                          "Initiative"                : 80
+                                        },
+
+                    "Basis-XP"      :   236,
+                    "Fundorte"      :   [""],
+
+                    "Attacken"      :   {"Blütenwirbel": 1, "Blättertanz": 1, "Tackle": 1, "Heuler": 1, "Rankenhieb": 1, "Wachstum": 1, "Egelsamen": 9, "Rasierblatt": 12, "Giftpuder": 15, "Schlafpuder": 15, "Samenbombe": 20, "Bodycheck": 25, "Lockduft": 30, "Synthese": 37, "Sorgensamen": 44, "Risikotakle": 51, "Solarstrahl": 58},
+
+                    "TMs"           :   [8,9,10,11,17,19,21,24,25,28,29,31,34,39,41,46,50,74,76,88,94,98],
+
+                    "TPs"           :   [0,1,10,17,20,22,24,26,27,59,65,67,71,72,77,85],
+
+                    "Fangrate"      :   [45,11.9],
+                    "Ei-Zyklen"     :   20,
+                    "Ei-Gruppe"     :   ["Monster", "Pflanze"]
+                }],
+
+   "4" :        [{
+
+                    "Nummer"        :   4,
+                    "Name"          :   "Glumanda",
+                    "Typ"           :   ["Feuer"],
+
+                    "Schwächen"     :   [
+                                          [0, [""]],
+                                          [0.25, [""]],
+                                          [0.5, ["Pflanze", "Feuer", "Käfer", "Stahl", "Fee"]],
+                                          [1, ["Normal", "Elektro", "Kampf", "Gift", "Flug", "Psycho", "Geist", "Drache", "Unlicht", "Eis"]],
+                                          [2, ["Wasser", "Boden", "Gestein"]],
+                                          [4, [""]]
+                                        ],
+
+                    "Beschreibung"  :   "Dieses POKéMON bevorzugt heiße Lebensräume. Bei Regen dampft die Schwanzspitze von GLUMANDA.",
+                    "Entwicklungen" :   {"Glumanda": 0, "Glutexo": 16, "Glurak": 36},
+                    "Needs" 		:   {},
+                    "Fähigkeiten"   :   ["Großbrand", "Solarkraft"],
+
+                    "Geschlechter"  :   {
+                                          "männlich"                  : 87.5,
+                                          "weiblich"                  : 12.5
+                                        },
+
+                    "Basiswerte"    :   {
+                                          "KP"                        : 39,
+                                          "Angriff"                   : 52,
+                                          "Verteidigung"              : 43,
+                                          "Spezial-Angriff"           : 60,
+                                          "Spezial-Verteidigung"      : 50,
+                                          "Initiative"                : 65
+                                        },
+
+                    "Basis-XP"      :   62,
+                    "Fundorte"      :   ["Starter"],
+
+                    "Attacken"      :   {"Kratzer": 1, "Heuler":  1, "Glut":  4, "Rauchwolke":  8, "Feuerodem":  12, "Feuerzahn":  17, "Schlitzer":  20, "Flammenwurf":  24, "Grimasse":  28, "Feuerwirbel":  32, "Inferno":  36, "Flammenblitz":  40},
+
+                    "TMs"           :   [0,1,3,5,13,15,21,22,24,25,26,31,34,37,38,39,40,41,43,46,48,59,65,68,76,78,94],
+
+                    "TPs"           :   [0,1,2,15,20,24,26,27,31,32,36,43,47,51,55,62,85],
+
+                    "Fangrate"      :   [45,11.9],
+                    "Ei-Zyklen"     :   20,
+                    "Ei-Gruppe"     :   ["Monster", "Drache"]
+                }],
+
+   "5" :        [{
+
+                    "Nummer"        :   5,
+                    "Name"          :   "Glutexo",
+                    "Typ"           :   ["Feuer"],
+
+                    "Schwächen"     :   [
+                                          [0, [""]],
+                                          [0.25, [""]],
+                                          [0.5, ["Pflanze", "Feuer", "Käfer", "Stahl", "Fee"]],
+                                          [1, ["Normal", "Elektro", "Kampf", "Gift", "Flug", "Psycho", "Geist", "Drache", "Unlicht", "Eis"]],
+                                          [2, ["Wasser", "Boden", "Gestein"]],
+                                          [4, [""]]
+                                        ],
+
+                    "Beschreibung"  :   "Wenn GLUTEXO mit seinem Schwanz schwingt, steigt die Temperatur ins Unermeßliche.",
+                    "Entwicklungen" :   {"Glumanda": 0, "Glutexo": 16, "Glurak": 36},
+                    "Needs" 		:   {},
+                    "Fähigkeiten"   :   ["Großbrand", "Solarkraft"],
+
+                    "Geschlechter"  :   {
+                                          "männlich": 87.5,
+                                          "weiblich": 12.5
+                                        },
+
+                    "Basiswerte"    :   {
+                                          "KP": 58,
+                                          "Angriff": 64,
+                                          "Verteidigung": 58,
+                                          "Spezial-Angriff": 80,
+                                          "Spezial-Verteidigung": 65,
+                                          "Initiative": 80
+                                        },
+
+                    "Basis-XP"      :   142,
+                    "Fundorte"      :   [""],
+
+                    "Attacken"      :   {"Kratzer": 1, "Heuler":  1, "Glut":  1, "Rauchwolke":  1, "Feuerodem":  12, "Feuerzahn":  19, "Schlitzer":  24, "Flammenwurf":  30, "Grimasse":  37, "Feuerwirbel":  42, "Inferno":  48, "Flammenblitz":  54},
+
+                    "TMs"           :   [0,1,3,5,13,15,21,22,24,25,26,31,34,37,38,39,40,41,43,46,48,59,65,68,76,78,94],
+
+                    "TPs"           :   [0,1,2,15,20,24,26,27,31,32,36,43,47,51,55,62,85],
+
+                    "Fangrate"      :   [45,11.9],
+                    "Ei-Zyklen"     :   20,
+                    "Ei-Gruppe"     :   ["Monster", "Drache"]
+                }],
+
+   "6" :        [{
+
+                    "Nummer"        :   6,
+                    "Name"          :   "Glurak",
+                    "Typ"           :   ["Feuer", "Flug", "Drache"],
+
+                    "Schwächen"     :   [
+                                          [0, [""]],
+                                          [0.25, [""]],
+                                          [0.5, ["Pflanze", "Feuer", "Käfer", "Stahl", "Fee"]],
+                                          [1, ["Normal", "Elektro", "Kampf", "Gift", "Flug", "Psycho", "Geist", "Drache", "Unlicht"]],
+                                          [2, ["Wasser", "Boden", "Gestein", "Eis"]],
+                                          [4, [""]]
+                                        ],
+
+                    "Beschreibung"  :   "Dieses POKéMON kann mit seinem Feueratem Felsen schmelzen. Es verursacht ab und zu Waldbrände.",
+                    "Entwicklungen" :   {"Glumanda": 0, "Glutexo": 16, "Glurak": 36},
+                    "Needs" 		:   {},
+                    "Fähigkeiten"   :   ["Großbrand", "Solarkraft"],
+
+                    "Geschlechter"  :   {
+                                          "männlich"                  : 87.5,
+                                          "weiblich"                  : 12.5
+                                        },
+
+                    "Basiswerte"    :   {
+                                          "KP"                        : 78,
+                                          "Angriff"                   : 84,
+                                          "Verteidigung"              : 78,
+                                          "Spezial-Angriff"           : 109,
+                                          "Spezial-Verteidigung"      : 85,
+                                          "Initiative"                : 100
+                                        },
+
+                    "Basis-XP"      :   240,
+                    "Fundorte"      :   [""],
+
+                    "Attacken"      :   {"Luftschnitt": 1, "Drachenklaue":  1, "Hitzewelle": 1, "Kratzer": 1, "Heuler":  1, "Glut":  1, "Rauchwolke":  1, "Feuerodem":  12, "Feuerzahn":  19, "Schlitzer":  24, "Flammenwurf":  30, "Grimasse":  39, "Feuerwirbel":  46, "Inferno":  54, "Flammenblitz":  62},
+
+                    "TMs"           :   [0,1,3,5,6,8,9,11,13,15,21,22,24,25,26,30,31,34,37,38,39,40,41,43,46,48,59,65,68,76,78,92,94,95,97,99],
+
+                    "TPs"           :   [0,1,2,10,15,20,24,26,27,31,32,36,41,43,47,51,55,62,64,85,88,89],
+
+                    "Fangrate"      :   [45,11.9],
+                    "Ei-Zyklen"     :   20,
+                    "Ei-Gruppe"     :   ["Monster", "Drache"]
+                }],
+
+   "7" :        [{
+
+                    "Nummer"        :   7,
+                    "Name"          :   "Schiggy",
+                    "Typ"           :   ["Wasser"],
+
+                    "Schwächen"     :   [
+                                          [0, [""]],
+                                          [0.25, [""]],
+                                          [0.5, ["Feuer", "Wasser", "Eis", "Stahl"]],
+                                          [1, ["Normal", "Kampf", "Gift", "Boden", "Flug", "Psycho", "Käfer", "Gestein", "Geist", "Drache", "Unlicht", "Fee"]],
+                                          [2, ["Pflanze", "Elektro"]],
+                                          [4, [""]]
+                                        ],
+
+                    "Beschreibung"  :   "Nach der Geburt bildet sich auf SCHIGGYS Rücken ein Panzer. Es attackiert mit Sprühschaum.",
+                    "Entwicklungen" :   {"Schiggy": 0, "Schillok": 16, "Turtok": 36},
+                    "Needs" 		:   {},
+                    "Fähigkeiten"   :   ["Sturzbach", "Regengenuss"],
+
+                    "Geschlechter"  :   {
+                                          "männlich"                  : 87.5,
+                                          "weiblich"                  : 12.5
+                                        },
+
+                    "Basiswerte"    :   {
+                                          "KP"                        : 44,
+                                          "Angriff"                   : 48,
+                                          "Verteidigung"              : 65,
+                                          "Spezial-Angriff"           : 50,
+                                          "Spezial-Verteidigung"      : 64,
+                                          "Initiative"                : 43
+                                        },
+
+                    "Basis-XP"      :   63,
+                    "Fundorte"      :   ["Starter"],
+
+                    "Attacken"      :   {"Tackle": 1, "Rutenschlag":  1, "Aquaknarre":  3, "Panzerschutz":  6, "Turbodreher":  9, "Biss":  12, "Aquawelle":  15, "Schutzschild":  18, "Regentanz":  21, "Nassschweif":  24, "Hausbruch":  27, "Eisenabwehr":  30, "Hydropumpe":  33, "Schädelwumme":  36},
+
+                    "TMs"           :   [0,1,4,15,21,24,25,27,31,33,35,36,39,41,43,45,46,48,55,59,76,94],
+
+                    "TPs"           :   [1,3,4,5,6,16,20,26,27,31,45,46,52,56,62,69,84,85],
+
+                    "Fangrate"      :   [45,11.9],
+                    "Ei-Zyklen"     :   20,
+                    "Ei-Gruppe"     :   ["Monster", "Wasser 1"]
+                }],
+
+   "8" :        [{
+
+                    "Nummer"        :   8,
+                    "Name"          :   "Schillok",
+                    "Typ"           :   ["Wasser"],
+
+                    "Schwächen"     :   [
+                                          [0, [""]],
+                                          [0.25, [""]],
+                                          [0.5, ["Feuer", "Wasser", "Eis", "Stahl"]],
+                                          [1, ["Normal", "Kampf", "Gift", "Boden", "Flug", "Psycho", "Käfer", "Gestein", "Geist", "Drache", "Unlicht", "Fee"]],
+                                          [2, ["Pflanze", "Elektro"]],
+                                          [4, [""]]
+                                        ],
+
+                    "Beschreibung"  :   "Dieses POKéMON lauert im Wasser auf Beute. Die Ohren dienen beim Schwimmen zur Orientierung.",
+                    "Entwicklungen" :   {"Schiggy": 0, "Schillok": 16, "Turtok": 36},
+                    "Needs" 		:   {},
+                    "Fähigkeiten"   :   ["Sturzbach", "Regengenuss"],
+
+                    "Geschlechter"  :   {
+                                          "männlich"                  : 87.5,
+                                          "weiblich"                  : 12.5
+                                        },
+
+                    "Basiswerte"    :   {
+                                          "KP"                        : 59,
+                                          "Angriff"                   : 63,
+                                          "Verteidigung"              : 80,
+                                          "Spezial-Angriff"           : 65,
+                                          "Spezial-Verteidigung"      : 80,
+                                          "Initiative"                : 58
+                                        },
+
+                    "Basis-XP"      :   142,
+                    "Fundorte"      :   [""],
+
+                    "Attacken"      :   {"Tackle": 1, "Rutenschlag":  1, "Aquaknarre":  1, "Panzerschutz":  1, "Turbodreher":  9, "Biss":  12, "Aquawelle":  15, "Schutzschild":  20, "Regentanz":  25, "Nassschweif":  30, "Hausbruch":  35, "Eisenabwehr":  40, "Hydropumpe":  45, "Schädelwumme":  50},
+
+                    "TMs"           :   [0,1,4,15,21,24,25,27,31,33,35,36,39,41,43,45,46,48,55,59,76,94],
+
+                    "TPs"           :   [1,3,4,5,6,16,20,26,27,31,45,46,52,56,62,69,84,85],
+
+                    "Fangrate"      :   [45,11.9],
+                    "Ei-Zyklen"     :   20,
+                    "Ei-Gruppe"     :   ["Monster", "Wasser 1"]
+                }],
+
+   "9" :        [{
+
+                    "Nummer"        :   9,
+                    "Name"          :   "Turtok",
+                    "Typ"           :   ["Wasser"],
+
+                    "Schwächen"     :   [
+                                          [0, [""]],
+                                          [0.25, [""]],
+                                          [0.5, ["Feuer", "Wasser", "Eis", "Stahl"]],
+                                          [1, ["Normal", "Kampf", "Gift", "Boden", "Flug", "Psycho", "Käfer", "Gestein", "Geist", "Drache", "Unlicht", "Fee"]],
+                                          [2, ["Pflanze", "Elektro"]],
+                                          [4, [""]]
+                                        ],
+
+                    "Beschreibung"  :   "Ein mächtiges und schnelles POKéMON, das auf dem Rücken zwei Hochdruckwasserwerfer trägt.",
+                    "Entwicklungen" :   {"Schiggy": 0, "Schillok": 16, "Turtok": 36},
+                    "Needs" 		:   {},
+                    "Fähigkeiten"   :   ["Sturzbach", "Regengenuss"],
+
+                    "Geschlechter"  :   {
+                                          "männlich"                  : 87.5,
+                                          "weiblich"                  : 12.5
+                                        },
+
+                    "Basiswerte"    :   {
+                                          "KP"                        : 79,
+                                          "Angriff"                   : 83,
+                                          "Verteidigung"              : 100,
+                                          "Spezial-Angriff"           : 85,
+                                          "Spezial-Verteidigung"      : 105,
+                                          "Initiative"                : 78
+                                        },
+
+                    "Basis-XP"      :   239,
+                    "Fundorte"      :   [""],
+
+                    "Attacken"      :   {"Lichtkanone": 1,"Tackle": 1, "Rutenschlag":  1, "Aquaknarre":  1, "Panzerschutz":  1, "Turbodreher":  9, "Biss":  12, "Aquawelle":  15, "Schutzschild":  20, "Regentanz":  25, "Nassschweif":  30, "Hausbruch":  35, "Eisenabwehr":  42, "Hydropumpe":  49, "Schädelwumme":  56},
+
+                    "TMs"           :   [0,1,4,8,9,15,21,22,24,25,27,31,33,35,36,39,41,43,45,46,48,55,59,64,76,81,94],
+
+                    "TPs"           :   [1,3,4,5,6,10,16,20,24,26,27,31,32,45,46,52,56,58,62,69,70,84,85,98,99],
+
+                    "Fangrate"      :   [45,11.9],
+                    "Ei-Zyklen"     :   20,
+                    "Ei-Gruppe"     :   ["Monster", "Wasser 1"]
+                }],
+
+   "10" :       [{
+
+                    "Nummer"        :   10,
+                    "Name"          :   "Raupy",
+                    "Typ"           :   ["Käfer"],
+
+                    "Schwächen"     :   [
+                                          [0, []],
+                                          [0.25, []],
+                                          [0.5, ["Pflanze", "Kampf", "Boden"]],
+                                          [1, ["Normal", "Wasser", "Elektro", "Eis", "Psycho", "Käfer", "Geist", "Drache", "Unlicht", "Stahl", "Fee"]],
+                                          [2, ["Feuer", "Flug", "Gestein", "Gift"]],
+                                          [4, []]
+                                        ],
+
+                    "Beschreibung"  :   "Dieses POKéMON trägt Saugnäpfe an den Beinchen. Es kann mühelos Steigungen und Mauern erklimmen.",
+                    "Entwicklungen" :   {"Raupy": 0, "Safcon": 7, "Smettbo": 10},
+                    "Needs" 		:   {},
+                    "Fähigkeiten"   :   ["Puderabwehr", "Angsthase"],
+
+                    "Geschlechter"  :   {
+                                          "männlich"                  : 50.0,
+                                          "weiblich"                  : 50.0
+                                        },
+
+                    "Basiswerte"    :   {
+                                          "KP"                        : 45,
+                                          "Angriff"                   : 30,
+                                          "Verteidigung"              : 35,
+                                          "Spezial-Angriff"           : 20,
+                                          "Spezial-Verteidigung"      : 20,
+                                          "Initiative"                : 45
+                                        },
+
+                    "Basis-XP"      :   39,
+                    "Fundorte"      :   ["Route 25", "Vertania-Wald"],
+
+                    "Attacken"      :   {"Tackle": 1, "Fadenschuss":  1, "Käferbiss": 9},
+
+                    "TMs"           :   [82],
+
+                    "TPs"           :   [],
+
+                    "Fangrate"      :   [255,43.9],
+                    "Ei-Zyklen"     :   15,
+                    "Ei-Gruppe"     :   ["Käfer"]
+                }],
+
+   "11" :       [{
+
+                    "Nummer"        :   11,
+                    "Name"          :   "Safcon",
+                    "Typ"           :   ["Käfer"],
+
+                    "Schwächen"     :   [
+                                          [0, []],
+                                          [0.25, []],
+                                          [0.5, ["Pflanze", "Kampf", "Boden"]],
+                                          [1, ["Normal", "Wasser", "Elektro", "Eis", "Psycho", "Käfer", "Geist", "Drache", "Unlicht", "Stahl", "Fee"]],
+                                          [2, ["Feuer", "Flug", "Gestein", "Gift"]],
+                                          [4, []]
+                                        ],
+
+                    "Beschreibung"  :   "Da der Panzer dieses POKéMON sehr weich ist, bietet er keinen großen Schutz vor Attacken.",
+                    "Entwicklungen" :   {"Raupy": 0, "Safcon": 7, "Smettbo": 10},
+                    "Needs" 		:   {},
+                    "Fähigkeiten"   :   ["Puderabwehr", "Angsthase"],
+
+                    "Geschlechter"  :   {
+                                          "männlich"                  : 50.0,
+                                          "weiblich"                  : 50.0
+                                        },
+
+                    "Basiswerte"    :   {
+                                          "KP"                        : 45,
+                                          "Angriff"                   : 30,
+                                          "Verteidigung"              : 35,
+                                          "Spezial-Angriff"           : 20,
+                                          "Spezial-Verteidigung"      : 20,
+                                          "Initiative"                : 45
+                                        },
+
+                    "Basis-XP"      :   72,
+                    "Fundorte"      :   ["Route 25", "Vertania-Wald"],
+
+                    "Attacken"      :   {"Härtner": 1},
+
+                    "TMs"           :   [82],
+
+                    "TPs"           :   [46],
+
+                    "Fangrate"      :   [255,43.9],
+                    "Ei-Zyklen"     :   15,
+                    "Ei-Gruppe"     :   ["Käfer"]
+                }],
+
+   "12" :        [{
+
+                    "Nummer"        :   12,
+                    "Name"          :   "Smettbo",
+                    "Typ"           :   ["Käfer", "Flug"],
+                    "Schwächen"     :   [
+                                          [0, ["Boden"]],
+                                          [0.25, ["Pflanze", "Kampf"]],
+                                          [0.5, ["Käfer"]],
+                                          [1, ["Normal","Wasser", "Psycho", "Geist", "Drache", "Unlicht", "Stahl", "Fee"]],
+                                          [2, ["Gift", "Feuer", "Elektro", "Eis", "Flug"]],
+                                          [4, ["Gestein"]]
+                                        ],
+
+                    "Beschreibung"  :   "Im Kampf schlägt dieses POKéMON sehr schnell mit den Flügeln, um giftigen Staub freizusetzen.",
+                    "Entwicklungen" :   {"Raupy": 0, "Safcon": 7, "Smettbo": 10},
+                    "Needs"         :   {},
+                    "Fähigkeiten"   :   ["Facettenauge", "Aufwertung"],
+
+                    "Geschlechter"  :   {
+                                          "männlich"                  : 50,
+                                          "weiblich"                  : 50
+                                        },
+
+                    "Basiswerte"    :   {
+                                          "KP"                        : 60,
+                                          "Angriff"                   : 45,
+                                          "Verteidigung"              : 50,
+                                          "Spezial-Angriff"           : 90,
+                                          "Spezial-Verteidigung"      : 80,
+                                          "Initiative"                : 70
+                                        },
+
+                    "Basis-XP"      :   178,
+                    "Fundorte"      :   [""],
+
+                    "Attacken"      :   {
+                                          "Windstoß": 1, "Härtner":  1, "Tackle": 1, "Fadenschuss":  1, "Käferbiss":  1,
+                                          "Superschall":  4, "Konfusion":  8, "Giftpuder":  12, "Stachelspore":  12, "Schlafpuder":  12,
+                                          "Psystrahl":  16, "Wirbelwind":  20, "Luftschnitt":  24, "Bodyguard":  28, "Käfergebrumm": 32,
+                                          "Rückenwind": 36, "Wutpulver": 40, "Falterreigen": 44
+                                        },
+
+                    "TMs"           :   [8,9,11,19,21,23,24,25,28,31,33,34,39,40,56,74,76,78,82,87,95],
+
+                    "TPs"           :   [11,20,26,27,29,33,40,46,61,65,89,96],
+
+                    "Fangrate"      :   [45, 11.9],
+                    "Ei-Zyklen"     :   15,
+                    "Ei-Gruppe"     :   ["Käfer"]
+                }]
+
+}

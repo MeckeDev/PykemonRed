@@ -1,0 +1,50 @@
+{
+
+      "x" : [{
+
+                    "Nummer"        :   0,
+                    "Name"          :   "",
+                    "Typ"           :   [""],
+                    "Schwächen"     :   [
+                                          [0, [""]],
+                                          [0.25, [""]] ,
+                                          [0.5, [""]],
+                                          [1, [""]] ,
+                                          [2, [""]],
+                                          [4, [""]]
+                                        ],
+
+                    "Beschreibung"  :   "",
+                    "Entwicklungen" :   {"1": 0, "2": 0, "3": 0},
+                    "Needs"         :   {},
+                    "Fähigkeiten"   :   [""],
+
+                    "Geschlechter"  :   {
+                                          "männlich"                  : 50,
+                                          "weiblich"                  : 50
+                                        },
+
+                    "Basiswerte"    :   {
+                                          "KP"                        : 0,
+                                          "Angriff"                   : 0,
+                                          "Verteidigung"              : 0,
+                                          "Spezial-Angriff"           : 0,
+                                          "Spezial-Verteidigung"      : 0,
+                                          "Initiative"                : 0
+                                        },
+
+                    "Basis-XP"      :   0,
+                    "Fundorte"      :   [""],
+
+                    "Attacken"      :   {"": 1},
+
+                    "TMs"           :   [0],
+
+                    "TPs"           :   [0],
+
+                    "Fangrate"      :   [0, 0.0],
+                    "Ei-Zyklen"     :   0,
+                    "Ei-Gruppe"     :   [""]
+                }]
+
+}
