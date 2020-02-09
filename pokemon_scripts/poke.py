@@ -5,7 +5,7 @@ from berechnungen import *
 
 def cls():
 
-    if os.name=='nt':
+    if os.name == 'nt':
         os.system('cls')
     else:
         os.system('clear')
@@ -13,12 +13,14 @@ def cls():
 
 class Pokemon:
 
-    def __init__(self, num, level):
+    def __init__(self, num):
 
         with open('pokemon.json', 'r', encoding='utf-8') as p:
             all_pokemon = json.load(p)
 
         poke = all_pokemon[f"{num}"][0]
+
+        level = 10
 
         self.nummer             = poke["Nummer"]
         self.name               = poke["Name"]
@@ -94,7 +96,7 @@ while True:
         break
 
     elif int(dex[0]) <= len(pokes):
-        test = Pokemon(int(dex[0]), int(dex[1]))
+        test = Pokemon(int(dex[0]))
         test.get_stats()
 
     else:
