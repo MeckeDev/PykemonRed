@@ -10,8 +10,9 @@ class Character:
         self.i = 1
 
         # Character Position x und y (0, 0) ist Oben Links
-        self.y = y                  # Position auf der x - Achse // Oben - Unten
-        self.x = x                  # Position auf der y - Achse // Links - Rechts
+        self.position = [y, x]
+        self.y = self.position[0]                  # Position auf der x - Achse // Oben - Unten
+        self.x = self.position[1]                  # Position auf der y - Achse // Links - Rechts
 
         # Character Größe und Geschwindigkeit
         self.width = width          # Breite des Characters
