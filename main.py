@@ -22,8 +22,6 @@ clock = pygame.time.Clock()
 
 
 # Das Fenster wird nach einer Bewegung erneut "gezeichnet"
-
-
 def redrawGameWindow():
     win.fill((0, 0, 0))                         # Füllt das Fenster mit Schwarzer Farbe
     player.draw(win)                            # Zeichnet den Character an seiner aktuellen Position
