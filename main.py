@@ -17,6 +17,10 @@ pygame.display.set_caption("Pykemon Rot by Mecke_Dev")
 # Der Character des Spielers wird erstellt
 player = Character(20, 20, 32, 32)
 
+# Test-Gegner generieren
+trainer = Character(80, 80, 32, 32)
+trainer.lastpos = "r"
+
 # Eine Uhr wird erstellt um die FPS für die Animationen festzulegen
 clock = pygame.time.Clock()
 
@@ -25,6 +29,7 @@ clock = pygame.time.Clock()
 def redrawGameWindow():
     win.fill((0, 0, 0))                         # Füllt das Fenster mit Schwarzer Farbe
     player.draw(win)                            # Zeichnet den Character an seiner aktuellen Position
+    trainer.draw(win)                            # Zeichnet den Test-Gegner an seiner aktuellen Position
     pygame.display.update()                     # Zeigt uns das neu "gezeichnete" Bild an
 
 

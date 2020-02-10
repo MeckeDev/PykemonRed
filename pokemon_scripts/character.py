@@ -42,6 +42,23 @@ class Character:
         self.walkCount = 0          # Anzahl der Schritte werden gezählt, für den Ablauf der Animation
         self.lastpos = "d"          # Lässt uns wissen in welche Richtung der Character zuletzt geschaut hat
 
+        self.pokemon = []           # Pokemon die der Spieler bei sich trägt
+
+        # 10 Boxen in denen der Spieler seine Pokemon lagern kann
+        self.pokebox1 = []
+        self.pokebox2 = []
+        self.pokebox3 = []
+        self.pokebox4 = []
+        self.pokebox5 = []
+        self.pokebox6 = []
+        self.pokebox7 = []
+        self.pokebox8 = []
+        self.pokebox9 = []
+        self.pokebox10 = []
+
+        # Flags um zu überprüfen ob Spieler bestimmte Events im Spiel getriggert hat
+        self.flags = []
+
     # Funktion um den Character zum laufen zu bringen // Animation
     def draw(self, win):
 

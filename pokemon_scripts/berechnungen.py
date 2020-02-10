@@ -61,32 +61,33 @@ def spawn_xp(level, xp_typ):
 def xp_typen(entwicklungen):
 
     # öffnet die Liste der XP-Typen
-    with open('XP-Typen.json', 'r', encoding='utf-8') as xp:
-        xp_typ = json.load(xp)              # wandelt die Liste in Python um
+    xp = open('XP-Typen.json', 'r', encoding='utf-8')
+    xp_typ = json.load(xp)              # wandelt die Liste in Python um
+    xp.close()
 
-        xp1 = xp_typ["1"]                   # weist "xp1" alle Pokemon des Typs 1 zu
-        xp2 = xp_typ["2"]                   # weist "xp2" alle Pokemon des Typs 2 zu
-        xp3 = xp_typ["3"]                   # weist "xp3" alle Pokemon des Typs 3 zu
-        xp4 = xp_typ["4"]                   # weist "xp4" alle Pokemon des Typs 4 zu
+    xp1 = xp_typ["1"]                   # weist "xp1" alle Pokemon des Typs 1 zu
+    xp2 = xp_typ["2"]                   # weist "xp2" alle Pokemon des Typs 2 zu
+    xp3 = xp_typ["3"]                   # weist "xp3" alle Pokemon des Typs 3 zu
+    xp4 = xp_typ["4"]                   # weist "xp4" alle Pokemon des Typs 4 zu
 
-        # sucht die letzte mögliche Entwicklung des Pokemon
-        for elem in entwicklungen:
+    # sucht die letzte mögliche Entwicklung des Pokemon
+    for elem in entwicklungen:
 
-            # prüft ob die letzte Entwicklung Typ 1 ist
-            if elem in xp1:
-                return 1
+        # prüft ob die letzte Entwicklung Typ 1 ist
+        if elem in xp1:
+            return 1
 
-            # prüft ob die letzte Entwicklung Typ 2 ist
-            if elem in xp2:
-                return 2
+        # prüft ob die letzte Entwicklung Typ 2 ist
+        if elem in xp2:
+            return 2
 
-            # prüft ob die letzte Entwicklung Typ 3 ist
-            if elem in xp3:
-                return 3
+        # prüft ob die letzte Entwicklung Typ 3 ist
+        if elem in xp3:
+            return 3
 
-            # prüft ob die letzte Entwicklung Typ 4 ist
-            if elem in xp4:
-                return 4
+        # prüft ob die letzte Entwicklung Typ 4 ist
+        if elem in xp4:
+            return 4
 
 
 # Funktion um das Geschlecht des Pokemon zu generieren

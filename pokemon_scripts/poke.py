@@ -20,8 +20,9 @@ class Pokemon:
     def __init__(self, num, level):
 
         # Die Liste der Pokemon wird geöffnet
-        with open('pokemon.json', 'r', encoding='utf-8') as p:
-            all_pokemon = json.load(p)                          # Die Pokemonliste wird von Json in Python umgewandelt
+        p = open('pokemon.json', 'r', encoding='utf-8')
+        all_pokemon = json.load(p)                          # Die Pokemonliste wird von Json in Python umgewandelt
+        p.close()
 
         poke = all_pokemon[f"{num}"][0]                         # wählt das Pokemon mit der Nummer aus der Liste
 
@@ -75,11 +76,11 @@ class Pokemon:
 
         print(f"Name\t\t: {self.name}")                 # gibt den Namen des Pokemon in der Konsole aus
         print(f"Nummer\t\t: #{self.nummer}")            # gibt die Nummer des Pokemon in der Konsole aus
-        print(f"XP\t\t: {self.xp}")                     # gibt die aktuellen XP des Pokemon in der Konsole aus
+        print(f"XP\t\t\t: {self.xp}")                     # gibt die aktuellen XP des Pokemon in der Konsole aus
         print(f"Level\t\t: {self.level}")               # gibt ds aktuelle Level des Pokemon in der Konsole aus
 
         # Gibt die unterschiedlichen Typen des Pokemon aus // z.B. Feuer, Drache
-        y = "Typ\t\t: "
+        y = "Typ\t\t\t: "
         i = 0
         while i < len(self.typ):
             y += f"{self.typ[i]}, "
@@ -111,8 +112,9 @@ cls()
 dummy = Pokemon(3, 40)
 
 # öffnet die Liste der Pokemon
-with open('pokemon.json', 'r', encoding='utf-8') as pokemons:
-    pokes = json.load(pokemons)                         # wandelt die Json-Pokemon in Python um
+pokemons = open('pokemon.json', 'r', encoding='utf-8')
+pokes = json.load(pokemons)                         # wandelt die Json-Pokemon in Python um
+pokemons.close()
 
 # startet die Testkonsole, bis sie beendet wird
 while True:
@@ -129,7 +131,7 @@ while True:
         break
 
     # Wenn die Zahl gültig ist werden die Statistiken zu dem Pokemon mit der eingegebenen Nummer ausgegeben
-    elif int(dex[0]) <= len(pokes):
+    elif int(dex) <= len(pokes):
 
         # erstellt ein test-Pokemon auf Level 10 mit der eingegeben Nummer aus dem Pokedex
         test = Pokemon(dex, 10)
@@ -138,7 +140,7 @@ while True:
         print("-"*30)                  # erstellt eine gestichelte Linie
 
         # zeigt die Zahl der XP die das gewählte Pokemon erhalten würde wenn es das Level 40 Bisaflor besiegt hätte
-        fight_xp(test, dummy)
+        fight_xp(test, dummy, False)
 
     else:
         print("Pokemon noch nicht im Pokedex!")  # Ausgabe wenn die eingegebene Zahl nicht gültig ist
