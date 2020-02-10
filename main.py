@@ -1,129 +1,95 @@
 import pygame
+from character import *
 
+# Das Spiel wird initialisiert
 pygame.init()
 
+# Die Auflösung des Fensters wird festgelegt
+screenwidth = 144*3                             # Breite des Fensters
+screenheight = 160*3                            # Höhe des Fensters
 
-screenwidth = 144*3
-screenheight = 160*3
-
-right = False
-left = False
-walkCount = 0
-
-# Character Position x and y
-x, y = 20, 20
-
-# Character Size width and height
-width, height = 32, 32
-
-# Character Speed velocity
-vel = 5
-
+# Das Fenster wird mit den angegeben Maßen erstellt
 win = pygame.display.set_mode((screenheight, screenwidth))
 
+# Der Titel des Fensters wird festgelegt
 pygame.display.set_caption("Pykemon Rot by Mecke_Dev")
 
-lastpos = "d"
+# Der Character des Spielers wird erstellt
+player = Character(20, 20, 32, 32)
 
-walkDown = [pygame.image.load('pic/player/playerF1.png'), pygame.image.load('pic/player/playerF2.png'),
-            pygame.image.load('pic/player/playerF3.png'), pygame.image.load('pic/player/playerF4.png')]
-
-walkUp = [pygame.image.load('pic/player/playerB1.png'), pygame.image.load('pic/player/playerB2.png'),
-          pygame.image.load('pic/player/playerB3.png'), pygame.image.load('pic/player/playerB4.png')]
-
-walkRight = [pygame.image.load('pic/player/playerR1.png'), pygame.image.load('pic/player/playerR2.png'),
-             pygame.image.load('pic/player/playerR3.png'), pygame.image.load('pic/player/playerR4.png')]
-
-walkLeft = [pygame.image.load('pic/player/playerL1.png'), pygame.image.load('pic/player/playerL2.png'),
-            pygame.image.load('pic/player/playerL3.png'), pygame.image.load('pic/player/playerL4.png')]
-
+# Eine Uhr wird erstellt um die FPS für die Animationen festzulegen
 clock = pygame.time.Clock()
 
 
+# Das Fenster wird nach einer Bewegung erneut "gezeichnet"
+
+
 def redrawGameWindow():
-    global walkCount
-    global lastpos
-
-    win.fill((0, 0, 0))
-
-    if walkCount + 1 >= 12:
-        walkCount = 0
-    if left:
-        win.blit(walkLeft[walkCount//3], (x, y))
-        lastpos = "l"
-        walkCount += 1
-    elif right:
-        win.blit(walkRight[walkCount // 3], (x, y))
-        lastpos = "r"
-        walkCount += 1
-    elif up:
-        win.blit(walkUp[walkCount // 3], (x, y))
-        lastpos = "u"
-        walkCount += 1
-    elif down:
-        win.blit(walkDown[walkCount // 3], (x, y))
-        lastpos = "d"
-        walkCount += 1
-
-    else:
-        if lastpos == "d":
-            win.blit(walkDown[0], (x, y))
-        if lastpos == "u":
-            win.blit(walkUp[0], (x, y))
-        if lastpos == "r":
-            win.blit(walkRight[0], (x, y))
-        if lastpos == "l":
-            win.blit(walkLeft[0], (x, y))
-
-    pygame.display.update()
+    win.fill((0, 0, 0))                         # Füllt das Fenster mit Schwarzer Farbe
+    player.draw(win)                            # Zeichnet den Character an seiner aktuellen Position
+    pygame.display.update()                     # Zeigt uns das neu "gezeichnete" Bild an
 
 
-# The Game
+# Die Endlos-Schleife die das Spiel am laufen hält, bis wir es beenden
 run = True
 while run:
+
+    # Hier legen wir die FPS fest, also wie oft das Bild in unserem Fenster aktualisiert werden soll
     clock.tick(24)
 
+    # Funktion um das Spiel zu beenden wenn der Nutzer den Schließen-Knopf benutzt
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
 
+    # keys beinhaltet alle möglichen Tasten die man auf der Tastatur drücken kann
     keys = pygame.key.get_pressed()
 
-    if keys[pygame.K_LEFT] and x > vel:
-        x -= vel
-        left = True
-        right = False
-        up = False
-        down = False
+    # Hier lernt unser Character laufen
 
-    elif keys[pygame.K_RIGHT] and x < screenwidth - width:
-        x += vel
-        right = True
-        left = False
-        up = False
-        down = False
+    # Wenn der Spieler A oder Pfeil nach Links drückt, bewegt der Character sich nach Links
+    if (keys[pygame.K_a] or keys[pygame.K_LEFT]) and player.x > player.vel:
+        player.x -= player.vel                  # versetzt die Position des Characters nach links
+        player.left = True                      # aktiviert die Bewegung nach links    <---
+        player.right = False                    # deaktiviert die Bewegung nach rechts
+        player.up = False                       # deaktiviert die Bewegung nach oben
+        player.down = False                     # deaktiviert die Bewegung nach unten
 
-    elif keys[pygame.K_UP] and y > vel:
-        y -= vel
-        left = False
-        right = False
-        up = True
-        down = False
+    # Wenn der Spieler D oder Pfeil nach Rechts drückt, bewegt der Character sich nach Links
+    elif (keys[pygame.K_d] or keys[pygame.K_RIGHT]) and player.x < screenwidth - player.width:
+        player.x += player.vel                  # versetzt die Position des Characters nach rechts
+        player.right = True                     # aktiviert die Bewegung nach rechts      <---
+        player.left = False                     # deaktiviert die Bewegung nach links
+        player.up = False                       # deaktiviert die Bewegung nach oben
+        player.down = False                     # deaktiviert die Bewegung nach unten
 
-    elif keys[pygame.K_DOWN] and y < screenheight - height - vel:
-        y += vel
-        left = False
-        right = False
-        up = False
-        down = True
+    # Wenn der Spieler W oder Pfeil nach Oben drückt, bewegt der Character sich nach Oben
+    elif (keys[pygame.K_w] or keys[pygame.K_UP]) and player.y > player.vel:
+        player.y -= player.vel                  # versetzt die Position des Characters nach oben
+        player.left = False                     # deaktiviert die Bewegung nach links
+        player.right = False                    # deaktiviert die Bewegung nach rechts
+        player.up = True                        # aktiviert die Bewegung nach oben        <---
+        player.down = False                     # deaktiviert die Bewegung nach unten
 
+    # Wenn der Spieler S oder Pfeil nach Unten drückt, bewegt der Character sich nach Unten
+    elif (keys[pygame.K_s] or keys[pygame.K_DOWN]) and player.y < screenheight - player.height - player.vel:
+        player.y += player.vel                  # versetzt die Position des Characters nach unten
+        player.left = False                     # deaktiviert die Bewegung nach links
+        player.right = False                    # deaktiviert die Bewegung nach rechts
+        player.up = False                       # deaktiviert die Bewegung nach oben
+        player.down = True                      # aktiviert die Bewegung nach unten        <---
+
+    # Wenn der Spieler keine Richtungstaste drückt, bleibt der Character stehen und schaut in die Richtung --
+    # -- in die er zuletzt gelaufen ist
     else:
-        left = False
-        right = False
-        up = False
-        down = False
-        walkCount = 0
+        player.left = False                     # deaktiviert die Bewegung nach links
+        player.right = False                    # deaktiviert die Bewegung nach rechts
+        player.up = False                       # deaktiviert die Bewegung nach oben
+        player.down = False                     # deaktiviert die Bewegung nach unten
+        player.walkCount = 0                    # setzt den Schrittzähler für die Animation wieder auf 0
 
+    # nach jeder Bewegung wird das Fenster neu "gezeichnet" bzw. während der Bewegung wird der Character animiert
     redrawGameWindow()
 
+# Schließt das Spiel wenn es beendet wird
 pygame.quit()

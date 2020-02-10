@@ -1,4 +1,5 @@
 {
+      // Kommentierte Beschreibungen gibt es weiter unten
 
       "x" : [{
 
@@ -45,6 +46,57 @@
                     "Fangrate"      :   [0, 0.0],
                     "Ei-Zyklen"     :   0,
                     "Ei-Gruppe"     :   [""]
+                }],
+
+
+                        //               Kommentierte Version des Tamplates              //
+
+      // x = Nummer des Pokemons im Pokedex
+      "x" : [{
+
+                    "Nummer"        :   0,                                      // Die Nummer des Pokemon
+                    "Name"          :   "",                                     // Der Name des Pokemon
+                    "Typ"           :   [""],                                   // Die Typen des Pokemon
+                    "Schwächen"     :   [
+                                          [0, [""]],                            // Typen die keinen Schaden verursachen
+                                          [0.25, [""]] ,                        // Typen die nicht sehr effektiv sind
+                                          [0.5, [""]],                          // Typen die nicht effektiv sind
+                                          [1, [""]] ,                           // Typen die normalen Schaden machen
+                                          [2, [""]],                            // Typen die effektiv sind
+                                          [4, [""]]                             // Typen die sehr effektiv sind
+                                        ],
+
+                    "Beschreibung"  :   "",                                     // Text der im Pokedex das Pokemon beschreibt
+                    "Entwicklungen" :   {"1": 0, "2": 0, "3": 0},               // Entwicklungen des Pokemons und ab welchem Level
+                    "Needs"         :   {},                                     // Besonderheiten die für die Enwicklung benötigt werden z.B. Mondstein
+                    "Fähigkeiten"   :   [""],                                   // Fähigkeiten die das Pokemon besitzt
+
+                    "Geschlechter"  :   {
+                                          "männlich"                  : 50,     // die Wahrscheinlickeit dass das Pokemon Männlich wird
+                                          "weiblich"                  : 50      // die Wahrscheinlickeit dass das Pokemon Weiblich wird
+                                        },
+
+                    "Basiswerte"    :   {
+                                          "KP"                        : 0,      // KP-Startwert des Pokemon
+                                          "Angriff"                   : 0,      // Angriff-Startwert des Pokemon
+                                          "Verteidigung"              : 0,      // Verteidigung-Startwert des Pokemon
+                                          "Spezial-Angriff"           : 0,      // Spezial-Angriff-Startwert des Pokemon
+                                          "Spezial-Verteidigung"      : 0,      // Spezial-Verteidigung-Startwert des Pokemon
+                                          "Initiative"                : 0       // Initiative-Startwert des Pokemon
+                                        },
+
+                    "Basis-XP"      :   0,                                      // Basis-XP werden zu XP-Berechnung am Ende eines Kampfes benötigt
+                    "Fundorte"      :   [""],                                   // Orte an denen das Pokemon gefunden werden kann
+
+                    "Attacken"      :   {"": 1},                                // Attacken welche das Pokemon erlernen kann und ab welchem Level
+
+                    "TMs"           :   [0],                                    // TMs die das Pokemon erlernen kann
+
+                    "TPs"           :   [0],                                    // TPs die das Pokemon erlernen kann
+
+                    "Fangrate"      :   [0, 0.0],                               // Fangrate, wie schwer das Pokemon zu fangen ist
+                    "Ei-Zyklen"     :   0,                                      // Wie lange es dauert die Eier des Pokemons auszubrüten
+                    "Ei-Gruppe"     :   [""]                                    // Nur Pokemon die den gleichen Gruppen angehören können sich paaren
                 }]
 
 }
