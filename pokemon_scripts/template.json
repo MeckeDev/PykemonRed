@@ -5,20 +5,20 @@
 
                     "Nummer"        :   0,
                     "Name"          :   "",
-                    "Typ"           :   [""],
+                    "Typ"           :   [],
                     "Schwächen"     :   [
-                                          [0, [""]],
-                                          [0.25, [""]] ,
-                                          [0.5, [""]],
-                                          [1, [""]] ,
-                                          [2, [""]],
-                                          [4, [""]]
+                                          [0, []],
+                                          [0.25, []] ,
+                                          [0.5, []],
+                                          [1, []] ,
+                                          [2, []],
+                                          [4, []]
                                         ],
 
                     "Beschreibung"  :   "",
                     "Entwicklungen" :   {"1": 0, "2": 0, "3": 0},
                     "Needs"         :   {},
-                    "Fähigkeiten"   :   [""],
+                    "Fähigkeiten"   :   [],
 
                     "Geschlechter"  :   {
                                           "männlich"                  : 50,
@@ -35,17 +35,17 @@
                                         },
 
                     "Basis-XP"      :   0,
-                    "Fundorte"      :   [""],
+                    "Fundorte"      :   [],
 
                     "Attacken"      :   {"": 1},
 
-                    "TMs"           :   [0],
+                    "TMs"           :   [],
 
-                    "TPs"           :   [0],
+                    "TPs"           :   [],
 
                     "Fangrate"      :   [0, 0.0],
                     "Ei-Zyklen"     :   0,
-                    "Ei-Gruppe"     :   [""]
+                    "Ei-Gruppe"     :   []
                 }],
 
 

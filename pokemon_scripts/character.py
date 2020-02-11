@@ -5,7 +5,7 @@ import pygame
 class Character:
 
     # Initialisierung eines neuen Characters
-    def __init__(self, y, x, width, height, sprite, walk=False, is_trainer= False):
+    def __init__(self, y, x, width, height, sprite, walk=False, is_trainer=False):
 
         self.i = 1
 
@@ -29,7 +29,7 @@ class Character:
         self.up = False             # Bewegung nach Oben
         self.down = False           # Bewegung nach Unten
         self.walkCount = 0          # Anzahl der Schritte werden gezählt, für den Ablauf der Animation
-        self.lastpos = "l"          # Lässt uns wissen in welche Richtung der Character zuletzt geschaut hat
+        self.lastpos = "d"          # Lässt uns wissen in welche Richtung der Character zuletzt geschaut hat
 
         self.pokemon = []           # Pokemon die der Spieler bei sich trägt
 

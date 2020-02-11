@@ -1,5 +1,4 @@
 import os
-import json
 from berechnungen import *
 
 
@@ -100,9 +99,11 @@ class Pokemon:
 
         # gibt die Basiswerte des Pokemon in der Konsole aus // KP, Angriff, Verteidigung, ...
         for w in self.basiswerte:
-            print(f"{tuple(self.basiswerte.items())[i][0]}".ljust(25, ' ') + ":" + f"{tuple(self.basiswerte.items())[i][1]}".ljust(10, ' '))
+            print(f"{tuple(self.basiswerte.items())[i][0]}".ljust(25, ' ') + ":" +
+                  f"{tuple(self.basiswerte.items())[i][1]}".ljust(10, ' '))
             i += 1
 
+        print(fight_xp(self, dummy, False))
 
 # leert die Konsole
 cls()
