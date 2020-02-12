@@ -5,14 +5,20 @@ from character import *
 # Das Spiel wird initialisiert
 pygame.init()
 
+
+trainers = []
+
 # Test-Gegner generieren
 t1 = Character(150, 150, 32, 32, "t1", True, True)
+trainers.append(t1)
+t2 = Character(500, 200, 32, 32, "t1", False, False)
+trainers.append(t2)
 
 # Eine Uhr wird erstellt um die FPS für die Animationen festzulegen
 clock = pygame.time.Clock()
 
 game = Game()
-karte = Map()
+karte = Map("Start")
 
 # Der Character des Spielers wird erstellt
 player = Character(80, 20, 32, 32, "player")
@@ -25,16 +31,12 @@ def redrawGameWindow():
             pygame.draw.rect(game.win, TileColor[karte.world[row][col]], (col * TileSize, row * TileSize, TileSize, TileSize))
 
     player.draw(game.win)  # Zeichnet den Character an seiner aktuellen Position
-    t1.draw(game.win)  # Zeichnet den Test-Gegner an seiner aktuellen Position
+    for y in trainers:
+        y.draw(game.win)  # Zeichnet den Test-Gegner an seiner aktuellen Position
     pygame.display.update()  # Zeigt uns das neu "gezeichnete" Bild an
 
 
-# legt aktuelle Karte fest
-karte.set_area("test")
-
 redrawGameWindow()
-
-trainers = [t1]
 
 # Die Endlos-Schleife die das Spiel am laufen hält, bis wir es beenden
 run = True
@@ -48,7 +50,8 @@ while run:
         if event.type == pygame.QUIT:
             run = False
 
-    t1.is_collided_with(player)
+    for x in trainers:
+        x.is_collided_with(player)
 
     # keys beinhaltet alle möglichen Tasten die man auf der Tastatur drücken kann
     keys = pygame.key.get_pressed()
@@ -56,51 +59,47 @@ while run:
     # Hier lernt unser Character laufen
 
     # Wenn der Spieler A oder Pfeil nach Links drückt, bewegt der Character sich nach Links
-    if (keys[pygame.K_a] or keys[pygame.K_LEFT]) and player.y > player.vel:
-        if karte.check_wall_left(player):
+    if keys[pygame.K_a] or keys[pygame.K_LEFT]:
+        if karte.check_wall("left", player):
             player.y -= player.vel                  # versetzt die Position des Characters nach links
-            player.left = True                      # aktiviert die Bewegung nach links    <---
-            player.right = False                    # deaktiviert die Bewegung nach rechts
-            player.up = False                       # deaktiviert die Bewegung nach oben
-            player.down = False                     # deaktiviert die Bewegung nach unten
+        player.left = True                      # aktiviert die Bewegung nach links    <---
+        player.right = False                    # deaktiviert die Bewegung nach rechts
+        player.up = False                       # deaktiviert die Bewegung nach oben
+        player.down = False                     # deaktiviert die Bewegung nach unten
 
     # Wenn der Spieler D oder Pfeil nach Rechts drückt, bewegt der Character sich nach Links
-    elif (keys[pygame.K_d] or keys[pygame.K_RIGHT]) and player.y + player.width < game.screenwidth:
-        print(f"{player.hitbox[0]} .. {player.hitbox[1]} ... {player.hitbox[0] + player.hitbox[2]} .... {player.hitbox[1] + player.hitbox[3]}")
-        if karte.world[(player.x//player.width)+1][((player.y+player.vel)//player.width)+1] in karte.can_walk:
-            if karte.world[(player.x//player.width)+1][((player.y+player.vel)//player.width)+1] in karte.is_teleport:
-                karte.teleport(player, "test2", karte.world[(player.x//player.width)+1][((player.y+player.vel)//player.width)+1])
+    elif keys[pygame.K_d] or keys[pygame.K_RIGHT]:
+        if karte.check_wall("right", player):
             player.y += player.vel                  # versetzt die Position des Characters nach rechts
-            player.right = True                     # aktiviert die Bewegung nach rechts      <---
-            player.left = False                     # deaktiviert die Bewegung nach links
-            player.up = False                       # deaktiviert die Bewegung nach oben
-            player.down = False                     # deaktiviert die Bewegung nach unten
+        player.right = True                     # aktiviert die Bewegung nach rechts      <---
+        player.left = False                     # deaktiviert die Bewegung nach links
+        player.up = False                       # deaktiviert die Bewegung nach oben
+        player.down = False                     # deaktiviert die Bewegung nach unten
 
     # Wenn der Spieler W oder Pfeil nach Oben drückt, bewegt der Character sich nach Oben
-    elif (keys[pygame.K_w] or keys[pygame.K_UP]) and player.x - player.vel > 0:
-        print(f"{player.hitbox[0]} .. {player.hitbox[1]} ... {player.hitbox[0] + player.hitbox[2]} .... {player.hitbox[1] + player.hitbox[3]}")
-        if player.hitbox[0] + player.hitbox[2] + player.vel > game.screenheight:
-            break
-        if karte.world[(player.x - player.vel)//player.width][(player.y//player.width)+1] in karte.can_walk:
-            if karte.world[(player.x - player.vel) // player.width][(player.y // player.width) + 1] in karte.is_teleport:
-                karte.is_teleport(player, "test2", karte.world[(player.x//player.width)+1][((player.y+player.vel)//player.width)+1])
+    elif keys[pygame.K_w] or keys[pygame.K_UP]:
+        if karte.check_wall("up", player):
             player.x -= player.vel                  # versetzt die Position des Characters nach oben
-            player.left = False                     # deaktiviert die Bewegung nach links
-            player.right = False                    # deaktiviert die Bewegung nach rechts
-            player.up = True                        # aktiviert die Bewegung nach oben        <---
-            player.down = False                     # deaktiviert die Bewegung nach unten
+        player.left = False                     # deaktiviert die Bewegung nach links
+        player.right = False                    # deaktiviert die Bewegung nach rechts
+        player.up = True                        # aktiviert die Bewegung nach oben        <---
+        player.down = False                     # deaktiviert die Bewegung nach unten
+
 
     # Wenn der Spieler S oder Pfeil nach Unten drückt, bewegt der Character sich nach Unten
-    elif (keys[pygame.K_s] or keys[pygame.K_DOWN]) and player.x < game.screenheight - player.vel:
-        print(f"{player.hitbox[0]} .. {player.hitbox[1]} ... {player.hitbox[0] + player.hitbox[2]} .... {player.hitbox[1] + player.hitbox[3]}")
-        if karte.world[((player.x + player.vel) // player.width)+1][player.y // player.width] in karte.can_walk:
-            if karte.world[((player.x + player.vel) // player.width)+1][player.y // player.width] in karte.is_teleport:
-                karte.teleport(player, "test2", karte.world[(player.x//player.width)+1][((player.y+player.vel)//player.width)+1])
+    elif keys[pygame.K_s] or keys[pygame.K_DOWN]:
+        if karte.check_wall("down", player):
             player.x += player.vel                  # versetzt die Position des Characters nach unten
-            player.left = False                     # deaktiviert die Bewegung nach links
-            player.right = False                    # deaktiviert die Bewegung nach rechts
-            player.up = False                       # deaktiviert die Bewegung nach oben
-            player.down = True                      # aktiviert die Bewegung nach unten        <---
+        player.left = False                     # deaktiviert die Bewegung nach links
+        player.right = False                    # deaktiviert die Bewegung nach rechts
+        player.up = False                       # deaktiviert die Bewegung nach oben
+        player.down = True                      # aktiviert die Bewegung nach unten        <---
+
+    # ################################ DEBUG ########################### #
+
+    elif keys[pygame.K_SPACE]:
+        player.x = 80
+        player.y = 80
 
     # Wenn der Spieler keine Richtungstaste drückt, bleibt der Character stehen und schaut in die Richtung --
     # -- in die er zuletzt gelaufen ist

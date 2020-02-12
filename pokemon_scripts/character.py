@@ -13,15 +13,17 @@ class Character:
         self.position = [y, x]
         self.y = self.position[0]                  # Position auf der x - Achse // Oben - Unten
         self.x = self.position[1]                  # Position auf der y - Achse // Links - Rechts
+        self.area = "Start"
 
         # Character Größe und Geschwindigkeit
         self.width = width          # Breite des Characters
         self.height = height        # Höhe des Characters
-        self.vel = 5                # Wie schnell bewegt sich der Character
+        self.vel = 5               # Wie schnell bewegt sich der Character
         self.sprite = sprite        # Aussehen des Characters
 
         # Hitbox for Character
         self.hitbox = (self.x, self.y, 32, 32)
+        self.hitbox_t = (0, 0, 0, 0)
 
         # Character Bewegungen // zu beginn bewegen wir uns in keine Richtung
         self.right = False          # Bewegung nach Rechts
@@ -30,6 +32,9 @@ class Character:
         self.down = False           # Bewegung nach Unten
         self.walkCount = 0          # Anzahl der Schritte werden gezählt, für den Ablauf der Animation
         self.lastpos = "d"          # Lässt uns wissen in welche Richtung der Character zuletzt geschaut hat
+        self.mid = "W"
+
+        self.money = 0
 
         self.pokemon = []           # Pokemon die der Spieler bei sich trägt
 
@@ -86,17 +91,22 @@ class Character:
 
             if self.trainer:
                 if self.lastpos == "d":
-                    self.hitbox = (self.y, self.x+32, 32, 160)
+                    self.hitbox_t = (self.y, self.x+32, 32, 160)
+                    self.hitbox = (self.y, self.x, 32, 32)
                 if self.lastpos == "r":
-                    self.hitbox = (self.y+32, self.x, 160, 32)
+                    self.hitbox_t = (self.y+32, self.x, 160, 32)
+                    self.hitbox = (self.y, self.x, 32, 32)
                 if self.lastpos == "l":
-                    self.hitbox = (self.y - 192, self.x, 192, 32)
+                    self.hitbox_t = (self.y - 192, self.x, 192, 32)
+                    self.hitbox = (self.y, self.x, 32, 32)
                 if self.lastpos == "u":
-                    self.hitbox = (self.y, self.x-192, 32, 192)
+                    self.hitbox_t = (self.y, self.x-192, 32, 192)
+                    self.hitbox = (self.y, self.x, 32, 32)
             else:
                 self.hitbox = (self.y, self.x, 32, 32)
 
             pygame.draw.rect(win, (255, 0, 0), self.hitbox, 2)
+            pygame.draw.rect(win, (0, 255, 0), self.hitbox_t, 2)
 
         #                                                                            ###    Spieler bewegt sich    ###
         else:
@@ -142,18 +152,17 @@ class Character:
         pygame.draw.rect(win, (255, 0, 0), self.hitbox, 2)
 
     def is_collided_with(self, p):
-        # if p.hitbox[1] < self.hitbox[1] + self.hitbox[3] and p.hitbox[1] + p.hitbox[3] > self.hitbox[1]:        # Checkt Hitboxen Oben und Unten
-        #    print("Battle")
         if self.lastpos == "r":
-            if self.hitbox[1] < p.hitbox[1] + p.hitbox[3] and self.hitbox[1] + self.hitbox[3] > p.hitbox[1]:
-                if self.hitbox[0] + self.hitbox[2] > p.hitbox[0] and self.hitbox[0] < p.hitbox[0] + p.hitbox[2]:
+            if self.hitbox_t[1] < p.hitbox[1] + p.hitbox[3] and self.hitbox_t[1] + self.hitbox_t[3] > p.hitbox[1]:
+                if self.hitbox_t[0] + self.hitbox_t[2] > p.hitbox[0] and self.hitbox_t[0] < p.hitbox[0] + p.hitbox[2]:
                     print(f"Kampf gefunden: \t{self.i}")
                     self.i += 1
         if self.lastpos == "l":
-            if self.hitbox[1] < p.hitbox[1] + p.hitbox[3] and self.hitbox[1] + self.hitbox[3] > p.hitbox[1]:
-                if self.hitbox[0] + self.hitbox[2] > p.hitbox[0] and self.hitbox[0] < p.hitbox[0] + p.hitbox[2]:
+            if self.hitbox_t[1] < p.hitbox_t[1] + p.hitbox[3] and self.hitbox_t[1] + self.hitbox_t[3] > p.hitbox[1]:
+                if self.hitbox_t[0] + self.hitbox_t[2] > p.hitbox[0] and self.hitbox_t[0] < p.hitbox[0] + p.hitbox[2]:
                     print(f"Kampf gefunden: \t{self.i}")
                     self.i += 1
+
 
     def set_sprite(self, sprite):
         # Arrays mit Einzelbildern für die Animationen für jeden Character
