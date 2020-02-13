@@ -20,6 +20,7 @@ class Character:
         self.height = height        # Höhe des Characters
         self.vel = 5               # Wie schnell bewegt sich der Character
         self.sprite = sprite        # Aussehen des Characters
+        self.teleport = False
 
         # Hitbox for Character
         self.hitbox = (self.x, self.y, 32, 32)

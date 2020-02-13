@@ -3,33 +3,37 @@ TileSize = 40
 # Map_W = 29
 Map_W = 24
 Map_H = 12
-BLACK = (0, 0, 0)
-WHITE = (255, 255, 255)
-RED = (255, 40, 40)
-Start = (255, 40, 40)
-Route1 = (255, 40, 40)
-VertaniaCity = (255, 40, 40)
+BLACK = ["Black", (0, 0, 0)]
+WHITE = ["White", (255, 255, 255)]
+RED = ["Red", (255, 40, 40)]
+Start = ["Start", (255, 40, 40)]
+Route1 = ["Route1", (255, 40, 40)]
+VertaniaCity = ["VertaniaCity", (255, 40, 40)]
+VC_Haus1 = ["VC_Haus1", (255, 40, 40)]
 
 B = "B"
 W = "W"
 R = "R"
 R1 = "R1"
 VC = "VC"
-S = "Start"
+VC_H1 = "VC_H1"
+S = "S"
 
 TileColor = {
-    "W": WHITE,
-    "B": BLACK,
-    "R": RED,
-    "R1": Route1,
-    "S": Start,
-    "VC": VertaniaCity
+    "W": WHITE[1],
+    "B": BLACK[1],
+    "R": RED[1],
+    "R1": Route1[1],
+    "S": Start[1],
+    "VC": VertaniaCity[1],
+    "VC_H1": VC_Haus1[1]
 }
 
 Places = {
-    "R1": "Route1",
-    "S": "Start",
-    "VC": "VertaniaCity"
+    "R1": Route1[0],
+    "S": Start[0],
+    "VC": VertaniaCity[0],
+    "VC_H1": VC_Haus1[0]
 }
 
 
@@ -40,7 +44,7 @@ class Map:
         self.area = start
 
         self.can_walk = ["W", "T"]
-        self.is_teleport = ["R1", "VC", "S"]
+        self.is_teleport = ["R1", "VC", "VC_H1", "S"]
 
         for elem in self.is_teleport:
             self.can_walk.append(elem)
@@ -51,28 +55,38 @@ class Map:
 
     def teleport(self, player, ziel):
 
+        # Suche Ziel in der Liste der Orte
         for short, long in Places.items():
             print(f"Short: {short}, Long: {long}")
             if short == ziel:
-                ziel = long
-                z = short
+                ziel = long     # z.B Route1
+                z = short       # z.B R1
 
+        # Suche aktuelles Gebiet als Langform
         for short, long in Places.items():
             if long == player.area:
-                area = long
-                a = short
+                area = long     # z.B VertaniaCity
+                a = short       # z.B VC
+                print(area, a)
 
+        # mach Ziel zu aktuellem Gebiet
         player.area = ziel
         print("Ziel: " + ziel)
-        self.set_area(ziel)
 
+        # Wenn Spieler sich nicht gerade teleportiert hat
+        if not player.teleport:
+            self.set_area(ziel)
+
+        #
+        print(f"a: {a}, area: {area}, z: {z}, ziel: {ziel}, P_Area: {player.area}, P_Mid: {player.mid}")
         i = 0
         for elem in self.world:
-            print(f"Elem: {elem} Ziel: {area}")
-            if area in elem:
-                player.x = i*10
-                player.y = elem.index(area)
-
+            print(f"Elem: {elem} Ziel: {z} Suche: {a}")
+            if a in elem:
+                if not player.teleport:
+                    player.x = i*TileSize
+                    player.y = elem.index(a)*TileSize
+                    player.teleport = True
                 print(f"x = {player.x} y = {player.y}")
             i += 1
 
@@ -117,25 +131,41 @@ class Map:
         if direction == "left":
             if p_top_left in self.can_walk and p_down_left in self.can_walk and char.y - char.vel > 0:
                 if char.mid in self.is_teleport:
-                    self.teleport(char, char.mid)
+                    if not char.teleport:
+                        self.teleport(char, char.mid)
+                    char.teleport = True
+                else:
+                    char.teleport = False
                 return True
 
         if direction == "right":
             if p_top_right in self.can_walk and p_down_right in self.can_walk and char.y + char.vel < Map_W*TileSize:
                 if char.mid in self.is_teleport:
-                    self.teleport(char, char.mid)
+                    if not char.teleport:
+                        self.teleport(char, char.mid)
+                    char.teleport = True
+                else:
+                    char.teleport = False
                 return True
 
         if direction == "up":
             if p_left_up in self.can_walk and p_right_up in self.can_walk and char.x - char.vel > 0:
                 if char.mid in self.is_teleport:
-                    self.teleport(char, char.mid)
+                    if not char.teleport:
+                        self.teleport(char, char.mid)
+                    char.teleport = True
+                else:
+                    char.teleport = False
                 return True
 
         if direction == "down":
             if p_left_down in self.can_walk and p_right_down in self.can_walk and char.x + char.vel < Map_H*TileSize:
                 if char.mid in self.is_teleport:
-                    self.teleport(char, char.mid)
+                    if not char.teleport:
+                        self.teleport(char, char.mid)
+                    char.teleport = True
+                else:
+                    char.teleport = False
                 return True
 
     def set_area(self, area):
@@ -144,18 +174,18 @@ class Map:
 
         if self.area == "Start":
             self.world = [
-                [B, B, W, VC, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B],
-                [B, B, W, W, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B],
-                [B, B, W, W, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B],
+                [B, B, B, VC, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B],
                 [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
-                [B, B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
                 [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
-                [B, B, B, W, W, W, B, B, B, B, B, B, B, W, W, W, B, B, B, B, B, B, B, B],
-                [B, B, B, W, W, W, B, B, B, B, W, B, B, W, W, W, B, B, B, B, B, B, B, B],
-                [B, B, B, W, W, W, B, B, B, B, W, B, B, W, W, W, B, B, B, B, B, B, B, B],
-                [B, B, B, W, W, W, B, B, B, B, W, B, B, W, W, W, B, B, B, B, B, B, B, B],
-                [B, B, B, W, W, W, B, B, B, B, W, B, B, W, W, W, B, B, B, B, B, B, B, B],
-                [B, B, B, W, W, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B]]
+                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, R1, W, W, W, W, W, W, W, B],
+                [B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B]]
 
         if self.area == "VertaniaCity":
             self.world = [
@@ -164,7 +194,7 @@ class Map:
                 [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
                 [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, R1],
                 [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
-                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, W, W, W, W, W, W, W, VC_H1, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
                 [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
                 [S, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
                 [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
@@ -174,15 +204,30 @@ class Map:
 
         if self.area == "Route1":
             self.world = [
-                [B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B],
-                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
-                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
-                [W, W, R, R, R, W, R, W, R, W, R, R, R, W, R, W, R, W, R, R, R, W, R, W, W, W, R, W, B],
-                [W, W, R, W, R, W, R, W, R, W, W, R, W, W, R, W, R, W, R, W, R, W, R, W, W, W, R, W, B],
-                [B, W, R, R, R, W, R, R, R, W, W, R, W, W, R, W, R, W, R, W, R, W, R, R, W, W, R, W, B],
-                [VC, W, R, W, W, W, W, W, R, W, W, R, W, W, R, R, R, W, R, W, R, W, R, W, R, W, R, W, B],
-                [B, W, R, W, W, W, W, W, R, W, W, R, W, W, R, W, R, W, R, W, R, W, R, W, W, R, R, W, B],
-                [B, W, R, W, W, W, W, W, R, W, W, R, W, W, R, W, R, W, R, W, R, W, R, W, W, W, R, W, B],
-                [B, W, R, W, W, W, W, W, R, W, W, R, W, W, R, W, R, W, R, R, R, W, R, W, W, W, R, W, B],
-                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
-                [B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B]]
+                [B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B],
+                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [R1, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, S],
+                [VC, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B]]
+
+        if self.area == "VC_Haus1":
+            self.world = [
+                [B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B],
+                [B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B],
+                [B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B],
+                [B, B, B, B, B, B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, B, B, B, B, B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, B, B, B, B, B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, B, B, B, B, B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, B, B, B, B, B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, B, B, B, B, B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, B, B, B, B, B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, B, B, B, B, B, W, W, W, W, W, W, W, W, W, VC, W, W, W, W, W, W, W, B],
+                [B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B]]

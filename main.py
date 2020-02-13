@@ -85,7 +85,6 @@ while run:
         player.up = True                        # aktiviert die Bewegung nach oben        <---
         player.down = False                     # deaktiviert die Bewegung nach unten
 
-
     # Wenn der Spieler S oder Pfeil nach Unten drückt, bewegt der Character sich nach Unten
     elif keys[pygame.K_s] or keys[pygame.K_DOWN]:
         if karte.check_wall("down", player):
@@ -97,9 +96,13 @@ while run:
 
     # ################################ DEBUG ########################### #
 
-    elif keys[pygame.K_SPACE]:
-        player.x = 80
+    elif keys[pygame.K_j]:
+        player.x = 180
         player.y = 80
+
+    elif keys[pygame.K_l]:
+        player.x = 180
+        player.y = 780
 
     # Wenn der Spieler keine Richtungstaste drückt, bleibt der Character stehen und schaut in die Richtung --
     # -- in die er zuletzt gelaufen ist
