@@ -143,13 +143,13 @@ class Character:
             # Wenn der Charcter aufhört sich zu bewegen bleibt er stehen und blickt in die letzte Laufrichtung
             else:
                 if self.lastpos == "d":
-                    win.blit(self.walkDown[0], (self.y, self.x))                 # lässt den Chacter nach unten schauen
+                    win.blit(self.walkDown[0], (self.y, self.x))                 # lässt den Character nach unten schauen
                 if self.lastpos == "u":
-                    win.blit(self.walkUp[0], (self.y, self.x))                   # lässt den Chacter nach oben schauen
+                    win.blit(self.walkUp[0], (self.y, self.x))                   # lässt den Character nach oben schauen
                 if self.lastpos == "r":
-                    win.blit(self.walkRight[0], (self.y, self.x))                # lässt den Chacter nach rechts schauen
+                    win.blit(self.walkRight[0], (self.y, self.x))                # lässt den Character nach rechts schauen
                 if self.lastpos == "l":
-                    win.blit(self.walkLeft[0], (self.y, self.x))                 # lässt den Chacter nach links schauen
+                    win.blit(self.walkLeft[0], (self.y, self.x))                 # lässt den Character nach links schauen
             self.hitbox = (self.y, self.x, 32, 32)
         pygame.draw.rect(win, (255, 0, 0), self.hitbox, 2)
 

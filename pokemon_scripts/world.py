@@ -1,5 +1,5 @@
 
-TileSize = 40
+TileSize = 45
 # Map_W = 29
 Map_W = 24
 Map_H = 12
