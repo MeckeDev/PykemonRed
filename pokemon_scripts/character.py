@@ -5,7 +5,7 @@ import pygame
 class Character:
 
     # Initialisierung eines neuen Characters
-    def __init__(self, y, x, width, height, sprite, walk=False, is_trainer=False):
+    def __init__(self, y, x, width, height, sprite, area="Start", walk=False, is_trainer=False):
 
         self.i = 1
 
@@ -13,7 +13,8 @@ class Character:
         self.position = [y, x]
         self.y = self.position[0]                  # Position auf der x - Achse // Oben - Unten
         self.x = self.position[1]                  # Position auf der y - Achse // Links - Rechts
-        self.area = "Start"
+        self.area = ""
+        self.area = area
 
         # Character Größe und Geschwindigkeit
         self.width = width          # Breite des Characters
@@ -163,7 +164,6 @@ class Character:
                 if self.hitbox_t[0] + self.hitbox_t[2] > p.hitbox[0] and self.hitbox_t[0] < p.hitbox[0] + p.hitbox[2]:
                     print(f"Kampf gefunden: \t{self.i}")
                     self.i += 1
-
 
     def set_sprite(self, sprite):
         # Arrays mit Einzelbildern für die Animationen für jeden Character

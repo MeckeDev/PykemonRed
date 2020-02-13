@@ -57,7 +57,7 @@ class Map:
 
         # Suche Ziel in der Liste der Orte
         for short, long in Places.items():
-            print(f"Short: {short}, Long: {long}")
+            # print(f"Short: {short}, Long: {long}")
             if short == ziel:
                 ziel = long     # z.B Route1
                 z = short       # z.B R1
@@ -67,27 +67,27 @@ class Map:
             if long == player.area:
                 area = long     # z.B VertaniaCity
                 a = short       # z.B VC
-                print(area, a)
+                # print(area, a)
 
         # mach Ziel zu aktuellem Gebiet
         player.area = ziel
-        print("Ziel: " + ziel)
+        # print("Ziel: " + ziel)
 
         # Wenn Spieler sich nicht gerade teleportiert hat
         if not player.teleport:
             self.set_area(ziel)
 
         #
-        print(f"a: {a}, area: {area}, z: {z}, ziel: {ziel}, P_Area: {player.area}, P_Mid: {player.mid}")
+        # print(f"a: {a}, area: {area}, z: {z}, ziel: {ziel}, P_Area: {player.area}, P_Mid: {player.mid}")
         i = 0
         for elem in self.world:
-            print(f"Elem: {elem} Ziel: {z} Suche: {a}")
+            # print(f"Elem: {elem} Ziel: {z} Suche: {a}")
             if a in elem:
                 if not player.teleport:
                     player.x = i*TileSize
                     player.y = elem.index(a)*TileSize
                     player.teleport = True
-                print(f"x = {player.x} y = {player.y}")
+                # print(f"x = {player.x} y = {player.y}")
             i += 1
 
     def check_wall(self, direction, char):

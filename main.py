@@ -9,9 +9,9 @@ pygame.init()
 trainers = []
 
 # Test-Gegner generieren
-t1 = Character(150, 150, 32, 32, "t1", True, True)
+t1 = Character(150, 150, 32, 32, "t1", "Start", True, True)
 trainers.append(t1)
-t2 = Character(500, 200, 32, 32, "t1", False, False)
+t2 = Character(500, 200, 32, 32, "t1", "Route1", False, False)
 trainers.append(t2)
 
 # Eine Uhr wird erstellt um die FPS für die Animationen festzulegen
@@ -21,7 +21,7 @@ game = Game()
 karte = Map("Start")
 
 # Der Character des Spielers wird erstellt
-player = Character(80, 20, 32, 32, "player")
+player = Character(80, 20, 32, 32, "player", "Start")
 
 
 # Das Fenster wird nach einer Bewegung erneut "gezeichnet"
@@ -32,7 +32,8 @@ def redrawGameWindow():
 
     player.draw(game.win)  # Zeichnet den Character an seiner aktuellen Position
     for y in trainers:
-        y.draw(game.win)  # Zeichnet den Test-Gegner an seiner aktuellen Position
+        if y.area == player.area:
+            y.draw(game.win)  # Zeichnet den Test-Gegner an seiner aktuellen Position
     pygame.display.update()  # Zeigt uns das neu "gezeichnete" Bild an
 
 
