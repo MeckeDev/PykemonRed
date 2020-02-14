@@ -1,8 +1,8 @@
-
 TileSize = 45
 # Map_W = 29
 Map_W = 24
 Map_H = 12
+
 BLACK = ["Black", (0, 0, 0)]
 WHITE = ["White", (255, 255, 255)]
 RED = ["Red", (255, 40, 40)]
@@ -84,8 +84,8 @@ class Map:
             # print(f"Elem: {elem} Ziel: {z} Suche: {a}")
             if a in elem:
                 if not player.teleport:
-                    player.x = i*TileSize
-                    player.y = elem.index(a)*TileSize
+                    player.x = i*TileSize+10
+                    player.y = elem.index(a)*TileSize+10
                     player.teleport = True
                 # print(f"x = {player.x} y = {player.y}")
             i += 1
@@ -193,8 +193,8 @@ class Map:
                 [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
                 [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
                 [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, R1],
-                [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
-                [B, W, W, W, W, W, W, W, VC_H1, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, W, W, W, W, W, W, B, B, B, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
+                [B, W, W, W, W, W, W, B, VC_H1, B, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
                 [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
                 [S, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],
                 [B, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, B],

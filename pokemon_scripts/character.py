@@ -1,4 +1,5 @@
 import pygame
+from world import *
 
 
 # Die Klasse Character wird erstellt
@@ -19,7 +20,7 @@ class Character:
         # Character Größe und Geschwindigkeit
         self.width = width          # Breite des Characters
         self.height = height        # Höhe des Characters
-        self.vel = 5               # Wie schnell bewegt sich der Character
+        self.vel = 5                # Wie schnell bewegt sich der Character
         self.sprite = sprite        # Aussehen des Characters
         self.teleport = False
 

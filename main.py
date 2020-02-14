@@ -21,7 +21,7 @@ game = Game()
 karte = Map("Start")
 
 # Der Character des Spielers wird erstellt
-player = Character(80, 20, 32, 32, "player", "Start")
+player = Character(90, 90, 32, 32, "player", "Start")
 
 
 # Das Fenster wird nach einer Bewegung erneut "gezeichnet"
@@ -104,6 +104,9 @@ while run:
     elif keys[pygame.K_l]:
         player.x = 180
         player.y = 780
+
+    elif keys[pygame.K_LALT] and keys[pygame.K_F4]:
+        break
 
     # Wenn der Spieler keine Richtungstaste drückt, bleibt der Character stehen und schaut in die Richtung --
     # -- in die er zuletzt gelaufen ist
