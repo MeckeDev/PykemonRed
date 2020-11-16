@@ -1,6 +1,6 @@
-from game import *
-from world import *
-from character import *
+from pokemon_scripts.game import *
+from pokemon_scripts.world import *
+from pokemon_scripts.character import *
 
 # Das Spiel wird initialisiert
 pygame.init()

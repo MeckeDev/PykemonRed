@@ -1,5 +1,5 @@
 import pygame
-from world import *
+from pokemon_scripts.world import *
 
 
 # Die Klasse Character wird erstellt

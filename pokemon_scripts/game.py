@@ -1,5 +1,5 @@
-from world import *
-from character import *
+from pokemon_scripts.world import *
+from pokemon_scripts.character import *
 
 
 class Game:
